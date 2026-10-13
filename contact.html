@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>contact ｜ Saki Sakai</title>
+	<meta name="description" content="香川のフリーランスデザイナー。ディレクションからデザイン、構築までワンストップで担当できるHP・WEBサイト制作。さらに、SNSで使えるアイコン用のイラストなど、多岐にわたってお仕事を承っております。">
+	<meta name="keywords" content="ポートフォリオ,webデザインナー,イラストレーター,デザイナー,フリーランス,ホームページ制作,portfolio">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+	<!-- Add the font yakuhanjp -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/yakuhanjp@3.4.1/dist/css/yakuhanjp.min.css">
+	<!-- Add the font brandon-grotesque -->
+	<link rel="stylesheet" href="https://use.typekit.net/iiy7iao.css">
+	<link rel="stylesheet" href="./css/style.css">
+
+
+</head>
+
+<body>
+	<div class="loader-wrap">
+		<div class="loader">Loading...</div>
+	</div>
+
+	<!-- ヘッダー -->
+	<header id="header" class="header">
+		<div class="header_inner">
+			<div class="header-logo"><a href="index.html">sakai&nbsp;saki</a></div>
+			<div class="btnWrapper">
+				<div class="btn humbergerBtn"><span></span><span></span><span></span></div>
+			</div>
+
+			<nav id="g-nav">
+				<div class="header-nav_inner">
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="about.html">About</a></li>
+						<li><a href="works.html">Works</a></li>
+						<li><a href="contact.html">Contact</a></li>
+					</ul>
+				</div>
+			</nav>
+			<nav class="pc-nav">
+				<ul class="pc-nav-list">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="about.html">About</a></li>
+					<li><a href="works.html">Works</a></li>
+					<li><a href="contact.html">Contact</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+
+	<!-- メイン -->
+	<main>
+
+		<div class="container-inner">
+			<section class="contact">
+				<div class="title_box">
+					<h2 class="title slide-down">Contact</h2>
+				</div>
+				<div class="contact-header slide-up">
+					<p class="text02">制作のご依頼・ご相談などお気軽にお問い合わせください。<br>お仕事のお誘いも大歓迎です。<br> お問い合わせお待ちしております。</p>
+					<p>以下のフォームに必要事項をご入力いただき、「send」ボタンを押してください。</p>
+					<p>( <span class="icon-required">＊</span>マークは必須項目です。)</p>
+				</div>
+				<form id="contact-form" method="post">
+					<fieldset class="contact-form__item slide-up">
+						<div class="contact-form__label">
+							<span class="icon-required">*</span><label for="name">お問い合わせの種類</label>
+						</div>
+						<div class="form-group_select">
+							<select name="contact-category" class="form-control">
+							<option value="選択してください" selected="selected">選択してください</option>
+							<option value="webサイト制作">webサイト制作</option>
+							<option value="イラスト制作">イラスト制作</option>
+							<option value="お仕事お誘い">お仕事お誘い</option>
+							<option value="その他">その他</option>
+							</select>
+						</div>
+					</fieldset>
+					<fieldset class="contact-form__item fadeIn">
+						<div class="contact-form__label">
+							<span class="icon-required">*</span><label for="name">お名前</label>
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control" id="name" name="name" placeholder="氏名">
+						</div>
+					</fieldset>
+					<fieldset class="contact-form__item fadeIn">
+						<div class="contact-form__label">
+							<span class="icon-required">*</span><label for="kana">お名前（カナ）</label>
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control" id="kana" name="kana" placeholder="フリガナ">
+						</div>
+					</fieldset>
+					<fieldset class="contact-form__item fadeIn">
+						<div class="contact-form__label">
+							<label for="tel">お電話番号（半角英数字）</label>
+						</div>
+						<div class="form-group">
+							<input type="tel" class="form-control" id="tel" name="tel" placeholder="お電話番号（半角英数字でご入力ください）">
+						</div>
+					</fieldset>
+					<fieldset class="contact-form__item fadeIn">
+						<div class="contact-form__label">
+							<span class="icon-required">*</span><label for="email">メールアドレス</label>
+						</div>
+						<div class="form-group">
+							<input type="email" class="form-control" id="email" name="email" placeholder="メールアドレス">
+						</div>
+					</fieldset>
+					<fieldset class="contact-form__item fadeIn">
+						<div class="contact-form__label">
+							<span class="icon-required">*</span><label for="message">お問い合わせ内容</label>
+						</div>
+						<div class="form-group">
+							<textarea class="form-control" id="message" name="message" placeholder="お問い合わせ内容（1000文字まで）をお書きください" required rows="3"></textarea>
+						</div>
+					</fieldset>
+					<div class="contact-form-btn fadeIn">
+						<div class="btn-cv-form">
+							<button type="submit" name="submitted" class="btn-cv-form__target">
+            <span class="btn-cv-form__text">Send</span>
+          </button>
+						</div>
+					</div>
+				</form>
+			</section>
+
+		</div>
+	</main>
+
+	<!-- フッター -->
+	<footer id="footer">
+		<div class="copyright">
+			<small>@SAKI SAKAI</small>
+		</div>
+	</footer>
+
+	<!-- JS -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="js/smooth-scroll.polyfills.min.js"></script>
+	<script src="./js/custom.js"></script>
+
+</body>
+
+</html>

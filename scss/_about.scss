@@ -1,0 +1,287 @@
+//
+// aboutのスタイル
+//
+// about
+.about-top {
+    background-color: $gray;
+    .about_inner {
+        padding: 70px 20px 70px 20px;
+        background-image: url(../images/img_illust01.png );
+        background-repeat: no-repeat;
+        background-position: 10% 100%;
+        background-size: 40%;
+        @media (min-width: 600px) {
+            padding: 90px 20px;
+            width: 100%;
+            max-width: 700px;
+            margin: 0 auto;
+            background-size: 25%;
+            background-position: 0% 100%;
+        }
+    }
+    .text01 {
+        padding: 0 0 20px;
+        @include fontsize(16);
+        line-height: 2;
+        letter-spacing: .3rem;
+        @media (min-width: 600px) {
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+    }
+}
+
+.viewBox {
+    display: flex;
+    justify-content: end;
+    .btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 149px;
+        height: 49px;
+        border: solid 1px #333;
+        background-color: $white;
+        position: relative;
+        z-index: 2;
+        overflow: hidden;
+        transition: all .3s;
+        @media (min-width: 600px) {
+            width: 180px;
+            height: 60px;
+        }
+        &:hover {
+            color: #fff;
+            &::after {
+                top: 0;
+                background: $black;
+            }
+        }
+        &::before {
+            z-index: -1;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transition: all .3s;
+            content: '';
+            position: absolute;
+            z-index: -1;
+            display: block
+        }
+        &::after {
+            top: 200%;
+            width: 100%;
+            height: 100%;
+            content: '';
+            position: absolute;
+            z-index: -1;
+            display: block;
+            transition: all .3s;
+        }
+        .inner {
+            padding: 10px 20px;
+            @include fontsize(13);
+            @media (min-width: 600px) {
+                @include fontsize(18);
+                padding: 30px 20px;
+            }
+        }
+    }
+}
+
+/*	下層ページ
+-------------------------------*/
+
+.about-hero {
+    position: relative;
+    text-align: left;
+    max-width: 400px;
+    margin: 0 auto;
+    @media (min-width: 600px) {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 730px;
+        padding: 60px 30px 0 30px;
+    }
+    @media (min-width: 800px) {
+        max-width: 800px;
+        padding: 80px 0 0 0;
+    }
+    img {
+        width: 80%;
+        object-fit: cover;
+        max-width: 300px;
+        @media (min-width: 600px) {
+            width: 100%;
+
+        }
+    }
+    .text_name {
+        @include fontsize(24);
+        position: absolute;
+        top: 130px;
+        left: 65%;
+        @media (min-width: 600px) {
+            position: static;
+            text-align: center;
+        }
+    }
+    .about-hero_inner {
+        @media (min-width: 600px) {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column
+        }
+    }
+}
+
+
+.about .text02 {
+    padding: 40px 0 20px 0;
+    text-align: center;
+    font-weight: 600;
+    line-height: 2.5em;
+    @media (min-width: 600px) {
+        padding: 20px 0 0 0;
+    }
+    p {
+        padding: 0 0 20px 0;
+        @media (min-width: 600px) {
+            padding: 10px 0 0 0;
+        }
+    }
+}
+
+.about-pc-container {
+    @media (min-width: 600px) {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 730px;
+        padding: 0 30px 0 30px;
+        margin: 0 auto;
+    }
+    @media (min-width: 800px) {
+        max-width: 800px;
+        padding: 0;
+    }
+}
+
+.skills,
+.profile,
+.history {
+    padding: 70px 0 0;
+    @media (min-width: 600px) {
+        padding: 120px 0 0;
+    }
+}
+
+.profile-tbl01 {
+    width: 100%;
+    @include fontsize(14);
+    th {
+        font-weight: 600;
+        display: block;
+        border: none;
+        padding: 10px 10px 10px 0;
+        width: 100%;
+    }
+    td {
+        border: none;
+        padding: 0 10px 20px 0;
+        display: block;
+        width: 100%;
+    }
+}
+
+.history-tbl01 {
+    @extend .profile-tbl01;
+    th {
+        padding: 20px 10px 10px 0;
+        &:first-child {
+            padding: 10px 10px 10px 0;
+        }
+    }
+    td {
+        padding: 0 10px 5px 0;
+    }
+}
+
+.skill-check {
+    display: none;
+}
+
+.skill-label {
+    cursor: pointer;
+    background: $white;
+    color: $black;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 1px;
+    padding: 10px 10px 10px 0;
+    position: relative;
+    @include fontsize(16);
+    &:hover {
+        background: #5D5A5A;
+        color: $white;
+        padding: 10px;
+    }
+    &::after {
+        background: none;
+        box-sizing: border-box;
+        content: '\f067';
+        display: block;
+        font-family: "Font Awesome 5 Free";
+        padding: 10px 20px;
+        position: absolute;
+        right: 0;
+        top: 0px;
+    }
+    &:hover::after {
+        background: none;
+    }
+    span {
+        padding: 0 0 0 30px;
+        @include fontsize(12);
+        font-weight: 300;
+    }
+}
+
+.skill-check:checked+.skill-label:after {
+    content: '\f068';
+}
+
+.skill-content {
+    border: 1px solid #333;
+    height: 0;
+    opacity: 0;
+    padding: 0 10px;
+    transition: .5s;
+    visibility: hidden;
+    @include fontsize(14);
+}
+
+.skill-check:checked+.skill-label+.skill-content {
+    height: 200px;
+    opacity: 1;
+    padding: 10px;
+    margin: 10px 0 0 0;
+    visibility: visible;
+}
+
+.skills {
+    @media (min-width: 600px) {
+        width: 100%;
+        margin: 0 auto;
+        max-width: 730px;
+        padding: 100px 30px 0 30px;
+    }
+    @media (min-width: 800px) {
+        max-width: 800px;
+        padding: 120px 0 0 0;
+    }
+}

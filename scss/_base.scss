@@ -1,0 +1,361 @@
+//
+// ベースのスタイル
+//
+// 変数
+$white: #fff;
+$key-color: #BED3DF;
+$black: #333;
+$gray: #F6F6F6;
+
+
+
+@use "sass:math";
+
+@mixin fontsize($size: 16) {
+    font-size: $size + px;
+    font-size: math.div($size, 10) * 1rem;
+}
+
+/*-------------------------------
+	Reset
+-------------------------------*/
+
+/*	Reset
+-------------------------------*/
+
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+p,
+span,
+em,
+small,
+strong,
+sub,
+sup,
+mark,
+del,
+ins,
+strike,
+abbr,
+dfn,
+blockquote,
+q,
+cite,
+code,
+pre,
+ol,
+ul,
+li,
+dl,
+dt,
+dd,
+div,
+section,
+article,
+main,
+aside,
+nav,
+header,
+hgroup,
+footer,
+img,
+figure,
+figcaption,
+address,
+time,
+audio,
+video,
+canvas,
+iframe,
+details,
+summary,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+// ベーススタイル
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: YakuHanJP, brandon-grotesque, "Yu Gothic", YuGothic, "Hiragino Kaku Gothic Pro", "Noto Serif JP", sans-serif;
+    @include fontsize(14);
+    height: 100%;
+    margin: 0 auto;
+    font-weight: 400;
+    line-height: 1.75;
+    letter-spacing: .08em;
+    color: $black;
+    background-color: $white;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    @media (max-width: 320px) {
+        font-size: 80%;
+    }
+    @media (min-width: 769px) {
+        @include fontsize(16);
+    }
+}
+
+* {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+a {
+    color: inherit;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    vertical-align: bottom;
+}
+
+/*	Layout
+-------------------------------*/
+
+article,
+aside,
+footer,
+header,
+nav,
+section,
+main {
+    display: block;
+}
+
+* {
+    box-sizing: border-box;
+    &::before,
+    &::after {
+        box-sizing: inherit;
+    }
+}
+
+/*	Elements
+-------------------------------*/
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    tr {
+        th,
+        td {
+            padding: 0;
+            text-align: left;
+            vertical-align: top;
+        }
+    }
+}
+
+h1 {
+    font-family: 'brandon-grotesque', sans-serif;
+    font-weight: 700;
+}
+
+h2 {
+    @include fontsize(37);
+    font-family: 'brandon-grotesque', sans-serif;
+    font-weight: 400;
+    padding-bottom: 50px;
+    @media (min-width: 600px) {
+        @include fontsize(52);
+    }
+    &::after {
+        content: " ";
+        display: block;
+        border-bottom: solid 2px $black;
+        bottom: -5px;
+        left: 0;
+        width: 33px;
+        @media (min-width: 600px) {
+            width: 54px;
+        }
+    }
+}
+
+h3,
+h4 {
+    font-family: 'brandon-grotesque', sans-serif;
+    font-weight: 300;
+}
+
+.top-index-img {
+    width: calc(100% + 70px);
+    position: relative;
+    overflow: hidden;
+}
+
+.title_box {
+    display: flex;
+    justify-content: center;
+}
+
+.category {
+    text-transform: uppercase;
+    @include fontsize(27);
+    line-height: 1.25;
+    @media (min-width: 600px) {
+        @include fontsize(30);
+    }
+}
+
+.category-sub {
+    @include fontsize(11);
+    padding-bottom: 15px;
+    @media (min-width: 600px) {
+        @include fontsize(14);
+        padding-bottom: 30px;
+    }
+}
+
+#footer {
+    background-color: $key-color;
+    .copyright {
+        @include fontsize(14);
+        padding: 10px 0;
+        color: $white;
+        font-family: 'brandon-grotesque', sans-serif;
+        font-weight: 700;
+        text-align: center;
+        letter-spacing: .2em;
+        @media (min-width: 600px) {
+            @include fontsize(16);
+            letter-spacing: .3em;
+        }
+    }
+}
+
+.container-inner {
+    width: 100%;
+    padding: 100px 20px;
+    @media (min-width: 600px) {
+        padding: 200px 30px 140px 30px;
+    }
+    @media (min-width: 1024px) {
+        max-width: 1080px;
+        margin: 0 auto;
+        padding: 200px 30px 200px 30px;
+    }
+}
+
+/*	フェードイン
+-------------------------------*/
+.fadeIn {
+    opacity: 0;
+}
+.act {
+    animation-name: fadeIn;
+    animation-fill-mode: backwards;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-fill-mode:forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.slide-down {
+    opacity: 0;
+    animation: slideDown 1.5s ease-in .2s forwards;
+}
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.slide-left {
+    opacity: 0;
+    animation: slideLeft 1.5s ease-in .2s forwards;
+}
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.slide-right {
+    opacity: 0;
+    animation: slideRight 1.5s ease-in .2s forwards;
+    @media (min-width: 600px) {
+        animation-name: slideDown;
+    }
+}
+@keyframes slideRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.slide-up {
+    opacity: 0;
+    animation: slideUp 1.5s ease-in .2s forwards;
+}
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

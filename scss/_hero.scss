@@ -1,0 +1,244 @@
+//
+// 
+//
+// hero
+.top-hero-container {
+    background-color: $key-color;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    .top-hero-inner {
+        width: 100%;
+        height: 100vh;
+        @media (min-width: 600px) {
+            width: 100%;
+            max-width: 1080px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .desc {
+            opacity: 0;
+            height: calc(100vh - 65%);
+            display: flex;
+            justify-content: center;
+            align-items: end;
+            padding: 0 20px 30px 20px;
+            font-weight: 500;
+            color: $black;
+            @include fontsize(15);
+            line-height: 1.8;
+            animation: slideInHero 1s ease-out 2s forwards;
+            @media (max-width: 320px) {
+                @include fontsize(12);
+            }
+            @media (min-width: 600px) {
+                left: 65px;
+                padding: 0;
+                height: auto;
+                position: absolute;
+                top: 500px;
+                justify-content: start;
+            }
+            @media (min-width: 1080px) {
+                left: 2px;
+            }
+        }
+    }
+}
+@keyframes slideInHero {
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+  
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.top-hero {
+    width: 100%;
+    padding: 30px 20px 0 20px;
+    position: relative;
+    @media (min-width: 600px) {
+        padding: 122px 30px;
+        width: 100%;
+        max-width: 1080px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: end;
+    }
+    @media (min-width: 1080px) {
+        padding: 122px 0;
+    }
+    picture img {
+        width: 100%;
+        height: 60vh;
+        object-fit: cover;
+        background-color: $gray;
+        max-height: 800px;
+        @media (min-width: 600px) {
+            width: 80%;
+            height: 70vh;
+            max-height: 1000px;
+            float: right;
+        }
+        @media (min-width: 1080px) {
+            width: 100%;
+        }
+    }
+}
+
+.top-hero-text {
+    opacity: 0;
+    color: #fff;
+    position: absolute;
+    bottom: -23%;
+    left: 20px;
+    line-height: 1;
+    animation: slideInHero 1s ease-out 2s forwards;
+    @media (max-width: 320px) {
+        bottom: -80px;
+    }
+    @media (min-width: 600px) {
+        top: 210px;
+        left: 65px;
+    }
+    @media (min-width: 1080px) {
+        left: 0;
+    }
+    @media (orientation: landscape) and (max-width:600px) {
+        left: 65px;
+        bottom: 40px;
+    }
+    .top-hero-copy {
+        @include fontsize(80);
+        @media (max-width: 320px) {
+            @include fontsize(60);
+        }
+        @media (min-width: 600px) {
+            @include fontsize(127);
+        }
+        @media (orientation: landscape) and (max-width:600px) {
+            @include fontsize(30);
+        }
+    }
+    .subcopy {
+        position: absolute;
+        top: 110px;
+        right: -80px;
+        line-height: 1.5;
+        letter-spacing: .25rem;
+        @include fontsize(13);
+        @media (max-width: 320px) {
+            top: 75px;
+        }
+        @media (min-width: 600px) {
+            top: 240px;
+            left: 7px;
+            right: 0;
+        }
+    }
+}
+
+.scrollDown a {
+    display: inline-block;
+    position: absolute;
+    right: 10px;
+    bottom: 0;
+    z-index: 2;
+    padding: 10px 10px 70px;
+    overflow: hidden;
+    color: #fff;
+    @include fontsize(9);
+    line-height: 1;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    writing-mode: vertical-lr;
+    @media (min-width: 600px) {
+        right: 20px;
+        padding: 10px 10px 90px;
+        @include fontsize(11);
+    }
+}
+
+.scrollDown {
+    @media (orientation: landscape) and (max-width: 767px) {
+        display: none;
+    }
+}
+
+.scrollDown a::after {
+    animation: sdl 1.5s cubic-bezier(1, 0, 0, 1) infinite;
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 1px;
+    height: 60px;
+    background: #fff;
+    @media (min-width: 600px) {
+        height: 80px;
+    }
+}
+
+@keyframes sdl {
+    0% {
+        transform: scale(1, 0);
+        transform-origin: 0 0;
+    }
+    50% {
+        transform: scale(1, 1);
+        transform-origin: 0 0;
+    }
+    50.1% {
+        transform: scale(1, 1);
+        transform-origin: 0 100%;
+    }
+    100% {
+        transform: scale(1, 0);
+        transform-origin: 0 100%;
+    }
+}
+
+.fixed_sns-list {
+    display: none;
+    @media (min-width: 600px) {
+        display: none;
+    }
+    @media (min-width: 1080px) {
+        display: inline-block;
+        right: 30px;
+        bottom: 250px;
+        position: fixed;
+        z-index: 1000;
+        margin-top: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: column;
+        li {
+            padding: 5px 0;
+        }
+        a {
+            @include fontsize(11);
+            &:nth-child(1) {
+                @include fontsize(15);
+            }
+        }
+    }
+    @media (orientation: landscape) and (max-width: 767px) {
+        display: none;
+    }
+}
+
+.fixed_sns {
+    @media (orientation: landscape) and (max-width: 767px) {
+        display: none;
+    }
+    @media (max-width: 600px) {
+        display: none;
+    }
+}
